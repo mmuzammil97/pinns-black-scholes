@@ -1,11 +1,5 @@
-Library versions
-
-numpy
-1.24.0
-matplotlib
-3.6.3
-torch
-2.0.1
-imageio
-2.36.1
-
+numpy==1.26.4
+matplotlib==3.8.4
+torch==2.4.1
+imageio==2.36.1
+scipy==1.16.2

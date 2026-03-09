@@ -52,7 +52,7 @@ This architecture is reused across examples, with only input/output dimensions c
 The notebook solves:
 
 $$
-u''(t) + c\,u'(t) + k\,u(t) = 0
+u''(t) + cu'(t) + ku(t) = 0
 $$
 
 with initial conditions $u(0)=u_0$, $u'(0)=v_0$.
@@ -68,7 +68,7 @@ Using autograd:
 Residual:
 
 $$
-f(t) = u_{tt} + c\,u_t + k\,u
+f(t) = u_{tt} + cu_t + ku
 $$
 
 Loss combines:

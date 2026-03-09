@@ -14,9 +14,7 @@ A PINN is a neural network trained not only on observed/known data but also on t
 
 Given a differential operator:
 
-$$
-\mathcal{N}[u](x,t) = 0
-$$
+$$\mathcal{N}[u](x,t) = 0$$
 
 the network $u_\theta(x,t)$ is trained to minimize:
 
@@ -51,9 +49,7 @@ This architecture is reused across examples, with only input/output dimensions c
 
 The notebook solves:
 
-$$
-u''(t) + cu'(t) + ku(t) = 0
-$$
+$$u''(t) + cu'(t) + ku(t) = 0$$
 
 with initial conditions $u(0)=u_0$, $u'(0)=v_0$.
 
@@ -67,9 +63,7 @@ Using autograd:
 
 Residual:
 
-$$
-f(t) = u_{tt} + cu_t + ku
-$$
+$$f(t) = u_{tt} + cu_t + ku$$
 
 Loss combines:
 
@@ -88,9 +82,7 @@ This gives a direct comparison: PINN constraints vs purely supervised fitting.
 
 The notebook then solves:
 
-$$
-u_t = \alpha u_{xx}, \quad x \in [0,1], \; t \in [0,T]
-$$
+$$u_t = \alpha u_{xx}, \quad x \in [0,1], \; t \in [0,T]$$
 
 with:
 
@@ -99,9 +91,7 @@ with:
 
 PINN residual:
 
-$$
-f(x,t)=u_t-\alpha u_{xx}
-$$
+$$f(x,t)=u_t-\alpha u_{xx}$$
 
 Loss terms:
 
@@ -119,21 +109,17 @@ This block includes:
 
 For a European call option $V(S,t)$, the Black-Scholes PDE is:
 
-$$
-V_t + \frac{1}{2}\sigma^2 S^2 V_{SS} + rS V_S - rV = 0
-$$
+$$V_t + \frac{1}{2}\sigma^2 S^2 V_{SS} + rS V_S - rV = 0$$
 
 with:
 
-1. **Terminal condition** at $t=T$:  
-   $$
-   V(S,T)=\max(S-K,0)
-   $$
+1. **Terminal condition** at $t=T$:
+
+$$V(S,T)=\max(S-K,0)$$
+
 2. **Boundary conditions**:
-   $$
-   V(0,t)=0,\quad
-   V(S_{\max},t)\approx S_{\max}-K e^{-r(T-t)}
-   $$
+
+$$V(0,t)=0,\quad V(S_{\max},t)\approx S_{\max}-K e^{-r(T-t)}$$
 
 #### Black-Scholes PINN loss
 
